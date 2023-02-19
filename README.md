@@ -7,7 +7,7 @@ This is the github repo for the PM test proposed by Fan et al. (2023) that tests
 You can install the required package with 
 
 ``` r
-install.pacakges(c("glmnet,MASS,fastclime"))
+install.pacakges(c("glmnet,MASS,fastclime,matrixStats"))
 ```
 ## R Functions
 
@@ -17,30 +17,34 @@ install.pacakges(c("glmnet,MASS,fastclime"))
 
 ## Inputs and Outputs
 
+```{r example}
+# Inputs:
+#    Y: n by 1 vector of the outcome variable.
+#    D: n by 1 vector of the endogenous variable.
+#    Z: n by pz matrix of instrumental variables.
+#    X: n by px matrix of covariates. NULL by default.
+# 
+#    sig.level: Significance level.
+#    intercept: Logical. FALSE for a model without intercept
+#    tuning: Lasso tuning parameter selection method.
+#    seed: random seed.
+#    MM: Number of Bootstrapping replications.
+#    A.mat: Weighting matrix A for the quadratic form of IV coefficients.
+#    weight: A (p_x + p_z)-dimensional vector for Lasso estimation.
+#    beta.output: If TRUE, export the point estimator and confidence interval of beta.
+# 
+# Outputs:
+#   M_test: Logical. TRUE for the M test rejecting the validity of instruments.
+#   PM_test: Logical. TRUE for the PM test rejecting the validity of instruments.
+#   sig.level: Significance level. 0.05 by default.
+#   M_p_val: P-value of the M test.
+#   PM_p_val: P-value of the PM test.
+#   beta.hat: (available only if bate.output == TRUE) Point estimator of beta.
+#   beta.CI: (available only if bate.output == TRUE) (1-sig.level)*100% Confidence Interval of beta.
+```
 
-Inputs:
-   Y: n by 1 vector of the outcome variable.
-   D: n by 1 vector of the endogenous variable.
-   Z: n by pz matrix of instrumental variables.
-   X: n by px matrix of covariates. NULL by default.
 
-   sig.level: Significance level.
-   intercept: Logical. FALSE for a model without intercept
-   tuning: Lasso tuning parameter selection method.
-   seed: random seed.
-   MM: Number of Bootstrapping replications.
-   A.mat: Weighting matrix A for the quadratic form of IV coefficients.
-   weight: A (p_x + p_z)-dimensional vector for Lasso estimation.
-   beta.output: If TRUE, export the point estimator and confidence interval of beta.
 
-Outputs:
-  M_test: Logical. TRUE for the M test rejecting the validity of instruments.
-  PM_test: Logical. TRUE for the PM test rejecting the validity of instruments.
-  sig.level: Significance level. 0.05 by default.
-  M_p_val: P-value of the M test.
-  PM_p_val: P-value of the PM test.
-  beta.hat: (available only if bate.output == TRUE) Point estimator of beta.
-  beta.CI: (available only if bate.output == TRUE) (1-sig.level)*100% Confidence Interval of beta.
 
 
 ## Example
@@ -53,6 +57,7 @@ rm(list = ls())
 library(glmnet)
 library(fastclime)
 library(matrixStats) 
+library(MASS)
 
 source("PMtest.R")
 

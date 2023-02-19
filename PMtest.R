@@ -1,5 +1,5 @@
 # Packages required: 
-#   glmnet, MASS, fastclime, matrixStats, rockchalk
+#   glmnet, MASS, fastclime, matrixStats
 # 
 # Inputs: 
 #    Y: n by 1 vector of the outcome variable.
@@ -15,7 +15,6 @@
 #    A.mat: Weighting matrix A for the quadratic form of IV coefficients. 
 #    weight: A (p_x + p_z)-dimensional vector for Lasso estimation. 
 #    beta.output: If TRUE, export the point estimator and confidence interval of beta. 
-#    rockchalk: TRUE for using the rockchalk package for replication of the results from the mvrnorm function. 
 #    
 # Outputs: 
 #   M_test: Logical. TRUE for the M test rejecting the validity of instruments. 
