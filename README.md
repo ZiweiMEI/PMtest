@@ -1,6 +1,6 @@
 # The PM Test 
 
-This is the github repo for the PM test proposed by [Fan, Guo, Mei (2023)](https://arxiv.org/pdf/2205.00171.pdf) that tests overidentifying restrictions (or instrumental variable validity) with high-dimensional data and heteroskedastic errors. The baseline method is called the M test since it is based on estimation and inference for maximum norms of (high-dimensional) vectors. The recommended procedure for practitioners is called the power-enhanced M test (PM test), which enhances to power by a quadratic statistic. 
+This is the github repo for the PM test proposed by [Fan, Guo, Mei (2023)](https://arxiv.org/abs/2205.00171) that tests overidentifying restrictions (or instrumental variable validity) with high-dimensional data and heteroskedastic errors. The baseline method is called the M test since it is based on estimation and inference for maximum norms of (high-dimensional) vectors. The recommended procedure for practitioners is called the power-enhanced M test (PM test), which enhances to power by a quadratic statistic. 
 
 ## Required packages 
 
