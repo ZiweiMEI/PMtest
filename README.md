@@ -49,7 +49,7 @@ install.pacakges(c("glmnet,MASS,fastclime,matrixStats"))
 
 ## Example
 
-This is a basic example that shows you how to use the Q test. 
+This is a basic example that shows you how to use the PM test. 
 
 ```{r example}
 rm(list = ls())
