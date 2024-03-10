@@ -7,7 +7,7 @@ This is the github repo for the PM test proposed by [Fan, Guo, Mei (2023)](https
 You can install the required package with 
 
 ``` r
-install.pacakges(c("glmnet,MASS,fastclime,matrixStats"))
+install.packages(c("glmnet,MASS,fastclime,matrixStats"))
 ```
 ## R Functions
 
